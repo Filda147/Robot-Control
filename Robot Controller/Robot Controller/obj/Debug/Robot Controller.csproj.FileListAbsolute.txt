@@ -1,0 +1,10 @@
+C:\Users\Filip\source\repos\Robot Controller\Robot Controller\bin\Debug\Robot Controller.exe.config
+C:\Users\Filip\source\repos\Robot Controller\Robot Controller\bin\Debug\Robot Controller.exe
+C:\Users\Filip\source\repos\Robot Controller\Robot Controller\bin\Debug\Robot Controller.pdb
+C:\Users\Filip\source\repos\Robot Controller\Robot Controller\obj\Debug\Robot Controller.csprojResolveAssemblyReference.cache
+C:\Users\Filip\source\repos\Robot Controller\Robot Controller\obj\Debug\Robot_Controller.Form1.resources
+C:\Users\Filip\source\repos\Robot Controller\Robot Controller\obj\Debug\Robot_Controller.Properties.Resources.resources
+C:\Users\Filip\source\repos\Robot Controller\Robot Controller\obj\Debug\Robot Controller.csproj.GenerateResource.cache
+C:\Users\Filip\source\repos\Robot Controller\Robot Controller\obj\Debug\Robot Controller.csproj.CoreCompileInputs.cache
+C:\Users\Filip\source\repos\Robot Controller\Robot Controller\obj\Debug\Robot Controller.exe
+C:\Users\Filip\source\repos\Robot Controller\Robot Controller\obj\Debug\Robot Controller.pdb
