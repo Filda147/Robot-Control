@@ -74,11 +74,14 @@ namespace Robot_Controller
         {
             //if (comboBox1.SelectedText != null)
             //    try
-             //   {
-                    serialPort1.PortName = comboBox1.SelectedItem.ToString();
+            //   {
+            if (!serialPort1.IsOpen)
+                serialPort1.Close();
+            serialPort1.PortName = comboBox1.SelectedItem.ToString();
+            serialPort1.Open();
             //    }
             //    catch
-           //     {
+            //     {
             //    }
         }
 
