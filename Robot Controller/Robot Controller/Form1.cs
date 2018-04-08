@@ -72,14 +72,14 @@ namespace Robot_Controller
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedText != null)
-                try
-                {
-                    serialPort1.PortName = comboBox1.SelectedText;
-                }
-                catch
-                {
-                }
+            //if (comboBox1.SelectedText != null)
+            //    try
+             //   {
+                    serialPort1.PortName = comboBox1.SelectedItem.ToString();
+            //    }
+            //    catch
+           //     {
+            //    }
         }
 
         private void button2_Click(object sender, EventArgs e)
