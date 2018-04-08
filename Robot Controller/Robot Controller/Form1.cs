@@ -72,23 +72,31 @@ namespace Robot_Controller
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (comboBox1.SelectedText != null)
-            //    try
-            //   {
+            if (comboBox1.SelectedText != null)
+                try
+               {
+         
+
             if (serialPort1.IsOpen)
                 serialPort1.Close();
             serialPort1.PortName = comboBox1.SelectedItem.ToString();
             serialPort1.Open();
-            //    }
-            //    catch
-            //     {
-            //    }
+               }
+                catch
+                {
+               }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(!serialPort1.IsOpen)
-             serialPort1.Open();
+            try
+            {
+                if (!serialPort1.IsOpen)
+                    serialPort1.Open();
+            }
+            catch
+            {
+            }
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -99,126 +107,167 @@ namespace Robot_Controller
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Stream myStream = null;
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-
-            openFileDialog1.InitialDirectory = "c:\\";
-            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            openFileDialog1.FilterIndex = 1;
-            openFileDialog1.RestoreDirectory = true;
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                try
+                Stream myStream = null;
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+                openFileDialog1.InitialDirectory = "c:\\";
+                openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                openFileDialog1.FilterIndex = 1;
+                openFileDialog1.RestoreDirectory = true;
+
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    if ((myStream = openFileDialog1.OpenFile()) != null)
+                    try
                     {
-                        using (myStream)
+                        if ((myStream = openFileDialog1.OpenFile()) != null)
                         {
-                            StreamReader sr = new StreamReader(myStream);
-                            Line = sr.ReadToEnd().ToUpper()+" ";
-                            richTextBox1.Text = Line;
-                            activeCode = Line;
+                            using (myStream)
+                            {
+                                StreamReader sr = new StreamReader(myStream);
+                                Line = sr.ReadToEnd().ToUpper() + " ";
+                                richTextBox1.Text = Line;
+                                activeCode = Line;
+                            }
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    }
                 }
             }
+            catch
+            { }
         }
 
         private void panel10_Click(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen)
+            try
             {
-                serialPort1.Write("A");
-                
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.Write("A");
+
+                }
             }
-            
+            catch
+            { }
 
         }
 
         private void panel9_Click(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen)
+            try
             {
-                serialPort1.Write("B");
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.Write("B");
 
+                }
             }
+            catch { }
         }
 
         private void panel8_Click(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen)
+            try
             {
-                serialPort1.Write("C");
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.Write("C");
 
+                }
             }
+            catch { }
         }
 
         private void panel7_Click(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen)
+            try
             {
-                serialPort1.Write("D");
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.Write("D");
 
+                }
             }
+            catch { }
         }
 
         private void panel5_Click(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen)
+            try
             {
-                serialPort1.Write("E");
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.Write("E");
 
+                }
             }
+            catch { }
         }
 
         private void panel4_Click(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen)
+            try
             {
-                serialPort1.Write("F");
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.Write("F");
 
+                }
             }
+            catch { }
         }
 
         private void panel1_Click(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen)
+            try
             {
-                serialPort1.Write("G");
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.Write("G");
 
+                }
             }
+            catch { }
         }
 
         private void panel2_Click(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen)
+            try
             {
-                serialPort1.Write("H");
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.Write("H");
 
+                }
             }
+            catch { }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen && activeCode != null && running)
+            try
             {
-                while (activeCode[activeIndex] != ' ')
+                if (serialPort1.IsOpen && activeCode != null && running)
                 {
-                    serialPort1.Write(activeCode[activeIndex].ToString());
-                    activeIndex++;
+                    while (activeCode[activeIndex] != ' ')
+                    {
+                        serialPort1.Write(activeCode[activeIndex].ToString());
+                        activeIndex++;
+                    }
+                    if (activeIndex != activeCode.Length - 1)
+                    {
+                        activeIndex++;
+                    }
+                    else
+                        activeIndex = 0;
                 }
-                if (activeIndex != activeCode.Length-1)
-                {
-                    activeIndex++;
-                }
-                else
-                    activeIndex = 0;
             }
+            catch { }
         }
 
         private void Form1_Load(object sender, EventArgs e)
